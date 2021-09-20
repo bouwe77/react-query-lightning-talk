@@ -1,0 +1,12 @@
+{
+  "editor.formatOnSave": true,
+  "slides.vscodeSettings": {
+    "workbench.colorTheme": "Night Owl",
+    "editor.fontSize": 28,
+    "editor.renderLineHighlight": "all",
+    "workbench.colorCustomizations": {
+      "editor.lineHighlightBackground": "#00000000",
+      "editor.lineHighlightBorder": "#0000ff"
+    }
+  }
+}
