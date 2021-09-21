@@ -5,7 +5,6 @@ import {
   useQuery,
 } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
-import { useState, useEffect } from 'react'
 
 const queryClient = new QueryClient()
 
@@ -13,17 +12,17 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div>
-        <h1>React Query Demo</h1>
-        <MovieStats />
-        <CreateMovie />
-        <MovieList />
+        <h1>My Favorite Numbers</h1>
+        <NumberStats />
+        <CreateNumber />
+        <NumberList />
       </div>
       <ReactQueryDevtools initialIsOpen={true} />
     </QueryClientProvider>
   )
 }
 
-function MovieStats() {
+function NumberStats() {
   return (
     <div className="block">
       <>stats...</>
@@ -31,22 +30,22 @@ function MovieStats() {
   )
 }
 
-function CreateMovie() {
-  const { createMovie } = useCreateMovie()
+function CreateNumber() {
+  const { createNumber } = useCreateNumber()
 
   function handleSubmit(event) {
     event.preventDefault()
-    console.log(new FormData(event.target))
-    createMovie({ title: 'Star Wars' })
+    //hiero dev.to shizzle
+    createNumber({ number: 88 })
   }
 
   return (
     <div className="block">
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="title">Title</label>
+          <label htmlFor="number">Number</label>
           <br />
-          <input type="text" name="title" />
+          <input type="text" name="number" />
         </div>
         <div>
           <button type="submit">Save</button>
@@ -56,97 +55,51 @@ function CreateMovie() {
   )
 }
 
-function MovieList() {
-  const { movies, isLoading, error } = useMovies()
+function NumberList() {
+  const { numbers, isLoading, error } = useNumbers()
 
   if (error) return 'Error...' + error
   if (isLoading) return 'Error...'
 
   return (
     <div className="block">
-      {movies.map((movie) => (
-        <div key={movie.id}>{movie.title}</div>
+      {numbers.map((number) => (
+        <div key={number.id}>{number.number}</div>
       ))}
     </div>
   )
 }
 
-function useMovies() {
-  const { isLoading, error, data } = useQuery('movies', () =>
-    fetch('http://localhost:3888/movies').then((res) => res.json()),
+function useNumbers() {
+  const { isLoading, error, data } = useQuery('numbers', () =>
+    fetch('http://localhost:8123/numbers').then((res) => res.json()),
   )
 
-  return { isLoading, error, movies: data }
+  return { isLoading, error, numbers: data }
 }
 
-function useCreateMovie() {
+function useCreateNumber() {
   const { mutate } = useMutation(
-    (newMovie) =>
-      fetch('http://localhost:3888/movies', {
+    (newNumber) => {
+      console.log('hiero')
+      fetch('http://localhost:8123/numbers', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(newMovie),
+        body: JSON.stringify(newNumber),
       }).then((res) => {
         //console.log(res.json())
-      }),
+      })
+    },
     {
       onSuccess: () => {
-        queryClient.invalidateQueries('movies')
+        queryClient.invalidateQueries('numbers')
       },
     },
   )
 
-  return { createMovie: mutate }
-}
-
-function Spinner() {
-  return null
-}
-
-function Modal() {
-  return null
-}
-
-function Products() {
-  const [products, setProducts] = useState([])
-  const [status, setStatus] = useState('idle')
-
-  useEffect(() => {
-    async function fetchProducts() {
-      try {
-        setStatus('loading')
-        const response = await fetch('http://example.com/products')
-        setProducts(response.json())
-        setStatus('success')
-      } catch {
-        setStatus('error')
-      }
-    }
-
-    fetchProducts()
-  }, [])
-
-  return (
-    <>
-      <h1>Products</h1>
-      {status === 'loading' ? (
-        <Spinner />
-      ) : status === 'error' ? (
-        <Modal>
-          Our apologies, an error has occurred and we are looking into this...
-        </Modal>
-      ) : (
-        products.map((product) => (
-          <div>
-            <h2>{product.name}</h2>
-            <p>{product.description}</p>
-          </div>
-        ))
-      )}
-    </>
-  )
+  return { createNumber: mutate }
 }
 
 export default App
