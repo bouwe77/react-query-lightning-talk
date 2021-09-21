@@ -1,17 +1,73 @@
+* {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+  color: darkmagenta;
+}
+
+h2 {
+  padding-bottom: 10px;
+  margin: 0px;
+}
+
 .block {
   border: 1px solid gray;
   width: 500px;
-  margin: 10px 0px;
+  margin-bottom: 20px;
   padding: 10px;
 }
 
 .number-list {
-  background-color: lightblue;
-  padding:10px
+  padding: 0;
+  margin: 0;
 }
 
 .number-button {
-  width:70px;
-  margin-right:10px;
-  padding:5px
+  min-width: 70px;
+  height: 70px;
+  margin: 10px 10px 0px 0px;
+  padding: 15px;
+  border: 0;
+  background-color: darkmagenta;
+  color: white;
+  font-size: 30px;
+}
+
+.number-button:hover {
+  background-color: lightsalmon;
+  cursor: pointer;
+}
+
+.number-container {
+  background-color: darkmagenta;
+  font-family: cursive;
+  height: 400px;
+}
+
+.number {
+  font-size: 230px;
+  color: #fff;
+  text-align: center;
+}
+
+.number-input {
+  height: 50px;
+  font-size: 30px;
+  margin-right: 15px;
+}
+
+.number-submit {
+  min-width: 70px;
+  height: 55px;
+  margin: 10px 10px 0px 0px;
+  border: 0;
+  background-color: darkmagenta;
+  color: white;
+  font-size: 30px;
+}
+
+.number-submit:hover {
+  background-color: lightsalmon;
+  cursor: pointer;
 }

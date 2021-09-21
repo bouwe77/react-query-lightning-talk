@@ -2,7 +2,7 @@ import 'dotenv/config'
 import { create } from 'temba'
 
 const config = {
-  // cacheControl: 'public, max-age=10',
+  //delay: 1200,
 }
 const server = create(config)
 

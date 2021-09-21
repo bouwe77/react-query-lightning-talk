@@ -18,6 +18,6 @@
   },
   "dependencies": {
     "dotenv": "^10.0.0",
-    "temba": "^0.7.8"
+    "temba": "^0.7.10"
   }
 }
