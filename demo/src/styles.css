@@ -4,3 +4,14 @@
   margin: 10px 0px;
   padding: 10px;
 }
+
+.number-list {
+  background-color: lightblue;
+  padding:10px
+}
+
+.number-button {
+  width:70px;
+  margin-right:10px;
+  padding:5px
+}
