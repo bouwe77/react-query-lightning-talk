@@ -35,7 +35,6 @@ function CreateNumber() {
 
   function handleSubmit(event) {
     event.preventDefault()
-    //hiero dev.to shizzle
     createNumber({ number: 88 })
   }
 
@@ -63,9 +62,11 @@ function NumberList() {
 
   return (
     <div className="block">
-      {numbers.map((number) => (
-        <div key={number.id}>{number.number}</div>
-      ))}
+      <div className="number-list">
+        {numbers.map((number) => (
+          <button className="number-button" key={number.id}>{number.number}</button>
+        ))}
+    </div>
     </div>
   )
 }
