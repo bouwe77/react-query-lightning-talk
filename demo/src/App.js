@@ -5,6 +5,7 @@ import {
   useQuery,
 } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
+import submitForm from './forms'
 
 const queryClient = new QueryClient()
 
@@ -33,11 +34,15 @@ function NumberStats() {
 function CreateNumber() {
   const { createNumber } = useCreateNumber()
 
-  function handleSubmit(event) {
-    event.preventDefault()
-    //hiero dev.to shizzle
-    createNumber({ number: 88 })
-  }
+  const handleSubmit = submitForm((values) => {
+    console.log('submitting', values)
+    if (
+      values?.number &&
+      values.number.length > 0 &&
+      typeof Number(values.number) === 'number'
+    )
+      createNumber({ number: Number(values.number) })
+  })
 
   return (
     <div className="block">
@@ -58,7 +63,7 @@ function CreateNumber() {
 function NumberList() {
   const { numbers, isLoading, error } = useNumbers()
 
-  if (error) return 'Error...' + error
+  if (error) alert(error) //return 'Error...' + error
   if (isLoading) return 'Error...'
 
   return (
@@ -81,7 +86,6 @@ function useNumbers() {
 function useCreateNumber() {
   const { mutate } = useMutation(
     (newNumber) => {
-      console.log('hiero')
       fetch('http://localhost:8123/numbers', {
         method: 'POST',
         headers: {
