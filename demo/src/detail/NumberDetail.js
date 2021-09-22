@@ -11,6 +11,11 @@ export function NumberDetail({ id, back }) {
       <button onClick={back} className="back">
         {'<< back'}
       </button>
+
+      <br />
+      <br />
+      <h2> Look how great this number is!</h2>
+
       <div className="number-detail-container">
         <h1 className="number-detail">{number.number}</h1>
       </div>

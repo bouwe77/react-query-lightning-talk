@@ -25,14 +25,14 @@ export function CreateNumber() {
   return (
     <Box>
       <h2>Enter your new favorite number here!</h2>
-      <form onSubmit={handleSubmit} autocomplete="off">
+      <form onSubmit={handleSubmit} autoComplete="off">
         <div>
           <input
             type="number"
             name="number"
             ref={numberInputRef}
             className="number-input"
-            maxlength="10"
+            maxLength="10"
             step="any"
           />
           <button type="submit" className="number-submit">

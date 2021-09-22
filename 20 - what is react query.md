@@ -1,4 +1,4 @@
-# What is React Query? ⚛
+# What is/does React Query? ⚛
 
     - Data synchronization library: fetching, caching, updating, background updates
 
@@ -8,9 +8,6 @@
 
     - Dedicated dev tools
 
-    - Stale-While-Revalidate
-
-Cached data as often as possible
-While updating that data in the background as often as it makes sense for the components that consume it.
+    - Stale-While-Revalidate strategy: Immediately response from the cache, but if necessary, refresh the cache in the background.
 
     - Also: request cancellation, offline support, prefetching, pagination, etc.

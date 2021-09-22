@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { QueryClient, QueryClientProvider, useIsFetching } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
-import { Box } from './Box'
 import { CreateNumber } from './create/CreateNumber'
 import { NumberDetail } from './detail/NumberDetail'
 import { NumberList } from './list/NumberList'
+import { NumberStats } from './stats/NumberStats'
 
 const queryClient = new QueryClient()
 
@@ -31,14 +31,6 @@ function App() {
       <GlobalLoadingIndicator />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
-  )
-}
-
-function NumberStats() {
-  return (
-    <Box>
-      <>stats...</>
-    </Box>
   )
 }
 
