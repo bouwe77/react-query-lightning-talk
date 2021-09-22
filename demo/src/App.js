@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { QueryClient, QueryClientProvider, useIsFetching } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
+import { Box } from './Box'
 import { CreateNumber } from './create/CreateNumber'
 import { NumberDetail } from './detail/NumberDetail'
 import { NumberList } from './list/NumberList'
@@ -35,9 +36,9 @@ function App() {
 
 function NumberStats() {
   return (
-    <div className="block">
+    <Box>
       <>stats...</>
-    </div>
+    </Box>
   )
 }
 

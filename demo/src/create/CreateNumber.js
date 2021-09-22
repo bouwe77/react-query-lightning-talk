@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import { Box } from '../Box'
 import { useCreateNumber } from './useCreateNumber'
 
 export function CreateNumber() {
@@ -22,21 +23,23 @@ export function CreateNumber() {
   }
 
   return (
-    <div className="block">
+    <Box>
       <h2>Enter your new favorite number here!</h2>
       <form onSubmit={handleSubmit} autocomplete="off">
         <div>
           <input
-            type="text"
+            type="number"
             name="number"
             ref={numberInputRef}
             className="number-input"
+            maxlength="10"
+            step="any"
           />
           <button type="submit" className="number-submit">
-            SAVE
+            save
           </button>
         </div>
       </form>
-    </div>
+    </Box>
   )
 }

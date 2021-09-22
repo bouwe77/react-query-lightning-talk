@@ -1,5 +1,21 @@
 * {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+*:focus {
+  outline: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
 }
 
 h1 {
@@ -11,11 +27,12 @@ h2 {
   margin: 0px;
 }
 
-.block {
+.box {
   border: 1px solid gray;
   width: 500px;
   margin-bottom: 20px;
   padding: 10px;
+  border-radius: 3px;
 }
 
 .number-list {
@@ -32,6 +49,7 @@ h2 {
   background-color: darkmagenta;
   color: white;
   font-size: 30px;
+  border-radius: 10px;
 }
 
 .number-button:hover {
@@ -39,20 +57,24 @@ h2 {
   cursor: pointer;
 }
 
-.number-container {
+.number-detail-container {
   background-color: darkmagenta;
   font-family: cursive;
-  height: 400px;
+  width: 90%;
+  height: 230px;
 }
 
-.number {
+.number-detail {
   font-size: 230px;
   color: #fff;
   text-align: center;
+  padding: 0;
+  margin: 20px 0px;
 }
 
 .number-input {
   height: 50px;
+  width: 120px;
   font-size: 30px;
   margin-right: 15px;
 }
@@ -65,9 +87,21 @@ h2 {
   background-color: darkmagenta;
   color: white;
   font-size: 30px;
+  border-radius: 10px;
 }
 
 .number-submit:hover {
   background-color: lightsalmon;
   cursor: pointer;
+}
+
+.back {
+  border: 0;
+  border-radius: 3px;
+}
+
+.back:hover {
+  cursor: pointer;
+  background-color: lightsalmon;
+  color: white;
 }

@@ -1,3 +1,4 @@
+import { Box } from '../Box'
 import { useNumbers } from './useNumbers'
 
 export function NumberList({ selectNumberId }) {
@@ -7,7 +8,7 @@ export function NumberList({ selectNumberId }) {
   if (isLoading) return 'Error...'
 
   return (
-    <div className="block">
+    <Box>
       <h2>Here are your favorite numbers:</h2>
       <div className="number-list">
         {numbers.map((number) => (
@@ -20,6 +21,6 @@ export function NumberList({ selectNumberId }) {
           </button>
         ))}
       </div>
-    </div>
+    </Box>
   )
 }
