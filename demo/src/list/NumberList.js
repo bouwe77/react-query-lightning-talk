@@ -4,8 +4,8 @@ import { useNumbers } from './useNumbers'
 export function NumberList({ selectNumberId }) {
   const { numbers, isLoading, error } = useNumbers()
 
-  if (error) alert(error) //return 'Error...' + error
-  if (isLoading) return 'Error...'
+  if (error) alert(error)
+  if (isLoading) return 'Loading...'
 
   return (
     <Box>

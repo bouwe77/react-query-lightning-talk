@@ -3,8 +3,8 @@ import { useNumber } from './useNumber'
 export function NumberDetail({ id, back }) {
   const { number, isLoading, error } = useNumber(id)
 
-  if (error) alert(error) //return 'Error...' + error
-  if (isLoading) return 'Error...'
+  if (error) alert(error)
+  if (isLoading) return 'Loading...'
 
   return (
     <>
