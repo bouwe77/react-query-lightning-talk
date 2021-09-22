@@ -18,7 +18,7 @@ input[type='number'] {
 
 h1 {
   color: darkmagenta;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 h2 {
@@ -103,4 +103,32 @@ h2 {
   cursor: pointer;
   background-color: lightsalmon;
   color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+}
+
+.signin {
+  width: 130px;
+  padding: 27px 0px;
+}
+
+.signin-button {
+  border: 0;
+  border-radius: 3px;
+}
+
+.signin-button:hover {
+  cursor: pointer;
+  background-color: lightsalmon;
+  color: white;
+}
+
+.error {
+  color: red;
 }
