@@ -5,9 +5,9 @@ import { useApi } from '../useApi'
 export function useNumbers() {
   const { numbersUrl } = useApi()
 
-  const { isLoading, error, data } = useQuery('numbers', () =>
+  const result = useQuery('numbers', () =>
     axios.get(numbersUrl).then((res) => res.data),
   )
 
-  return { isLoading, error, numbers: data }
+  return { ...result, numbers: result.data }
 }

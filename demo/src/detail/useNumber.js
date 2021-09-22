@@ -7,9 +7,9 @@ export function useNumber(numberId) {
 
   const { numbersUrl } = useApi()
 
-  const { isLoading, error, data } = useQuery(['number', numberId], () =>
+  const result = useQuery(['number', numberId], () =>
     axios.get(numbersUrl + numberId).then((res) => res.data),
   )
 
-  return { isLoading, error, number: data }
+  return { ...result, number: result.data }
 }
