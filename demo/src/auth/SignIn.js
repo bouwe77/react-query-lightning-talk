@@ -22,7 +22,7 @@ export function SignIn({ onSuccess }) {
       return
     }
 
-    const success = signIn(username)
+    const success = signIn(username.replace(/\s/g, ''))
     setError(success)
 
     if (success) onSuccess()
