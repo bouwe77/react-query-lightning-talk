@@ -15,13 +15,17 @@ function App() {
   const [toggle, setToggle] = useState(false)
 
   return (
-    <div>
+    <div className="container">
       <Header />
 
       {signedIn ? (
         <FavoriteNumbers />
       ) : (
-        <SignIn onSuccess={() => setToggle(!toggle)} />
+        <>
+          <h2>Finally a place to collect your favorite numbers!</h2>
+          Please sign in to get started now!
+          <SignIn onSuccess={() => setToggle(!toggle)} />
+        </>
       )}
     </div>
   )
@@ -45,7 +49,7 @@ function FavoriteNumbers() {
         </>
       )}
       <GlobalLoadingIndicator />
-      <ReactQueryDevtools initialIsOpen={false} />
+      <ReactQueryDevtools />
     </QueryClientProvider>
   )
 }
@@ -58,8 +62,12 @@ function Header() {
       <div className="logo">
         <h1>My Favorite Numbers</h1>
       </div>
-      <div className="signin">
-        {signedIn ? <button onClick={signOut}>sign out</button> : null}
+      <div className="signout">
+        {signedIn ? (
+          <button onClick={signOut} className="signout-button">
+            sign out
+          </button>
+        ) : null}
       </div>
     </header>
   )

@@ -15,5 +15,5 @@ export function useCreateNumber() {
     },
   )
 
-  return { ...mutation, createNumber: mutation.mutate }
+  return mutation
 }

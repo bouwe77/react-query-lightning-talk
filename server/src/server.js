@@ -2,7 +2,8 @@ import 'dotenv/config'
 import { create } from 'temba'
 
 const config = {
-  //delay: 1200,
+  connectionString: process.env.MONGO_URL,
+  //delay: 800,
 }
 const server = create(config)
 

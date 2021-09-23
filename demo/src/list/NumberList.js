@@ -2,7 +2,7 @@ import { Box } from '../Box'
 import { useNumbers } from './useNumbers'
 
 export function NumberList({ selectNumberId }) {
-  const { numbers, isLoading, error } = useNumbers()
+  const { data: numbers, isLoading, error } = useNumbers()
 
   if (error) alert(error)
   if (isLoading) return 'Loading...'

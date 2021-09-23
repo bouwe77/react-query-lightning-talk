@@ -11,5 +11,5 @@ export function useNumber(numberId) {
     axios.get(numbersUrl + numberId).then((res) => res.data),
   )
 
-  return { ...result, number: result.data }
+  return result
 }

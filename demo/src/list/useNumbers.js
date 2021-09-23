@@ -9,5 +9,5 @@ export function useNumbers() {
     axios.get(numbersUrl).then((res) => res.data),
   )
 
-  return { ...result, numbers: result.data }
+  return result
 }

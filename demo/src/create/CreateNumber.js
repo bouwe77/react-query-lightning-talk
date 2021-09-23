@@ -3,7 +3,7 @@ import { Box } from '../Box'
 import { useCreateNumber } from './useCreateNumber'
 
 export function CreateNumber() {
-  const { createNumber } = useCreateNumber()
+  const { mutate: createNumber } = useCreateNumber()
   const numberInputRef = useRef()
 
   function handleSubmit(event) {

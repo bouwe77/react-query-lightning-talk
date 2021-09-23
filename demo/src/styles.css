@@ -16,12 +16,17 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
+.container {
+  width: 570px;
+}
+
 h1 {
   color: darkmagenta;
   font-size: 30px;
 }
 
 h2 {
+  font-size: 20px;
   padding-bottom: 10px;
   margin: 0px;
 }
@@ -60,11 +65,11 @@ h2 {
   background-color: darkmagenta;
   font-family: cursive;
   width: 90%;
-  height: 230px;
+  height: 100px;
 }
 
 .number-detail {
-  font-size: 230px;
+  font-size: 100px;
   color: #fff;
   text-align: center;
   padding: 0;
@@ -110,20 +115,17 @@ header {
   justify-content: space-between;
 }
 
-.logo {
-}
-
-.signin {
+.signout {
   width: 130px;
   padding: 27px 0px;
 }
 
-.signin-button {
+.signout-button {
   border: 0;
   border-radius: 3px;
 }
 
-.signin-button:hover {
+.signout-button:hover {
   cursor: pointer;
   background-color: lightsalmon;
   color: white;
@@ -131,4 +133,20 @@ header {
 
 .error {
   color: red;
+}
+
+.form-row {
+  margin: 10px;
+}
+
+.signin-field {
+  width: 120px;
+  height: 30px;
+  font-size: 20px;
+}
+
+.signin-button {
+  border: 0;
+  height: 30px;
+  width: 120px;
 }

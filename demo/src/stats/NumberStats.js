@@ -3,7 +3,7 @@ import { Box } from '../Box'
 import { useNumbers } from '../list/useNumbers'
 
 export function NumberStats() {
-  const { numbers, isLoading, error } = useNumbers()
+  const { data: numbers, isLoading, error } = useNumbers()
   const { username } = useAuth()
 
   if (error) alert(error)

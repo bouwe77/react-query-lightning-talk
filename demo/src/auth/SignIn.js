@@ -39,11 +39,25 @@ export function SignIn({ onSuccess }) {
         ) : null}
       </span>
       <form onSubmit={handleSignIn}>
-        Username <input type="text" ref={usernameInputRef} />
-        <br />
-        Password <input type="password" ref={passwordInputRef} />
-        <br />
-        <button type="submit">Sign In</button>
+        <div className="form-row">
+          Username
+          <br />
+          <input type="text" className="signin-field" ref={usernameInputRef} />
+        </div>
+        <div className="form-row">
+          Password
+          <br />
+          <input
+            type="password"
+            className="signin-field"
+            ref={passwordInputRef}
+          />
+        </div>
+        <div className="form-row">
+          <button type="submit" className="signin-button">
+            Sign In
+          </button>
+        </div>
       </form>
     </>
   )

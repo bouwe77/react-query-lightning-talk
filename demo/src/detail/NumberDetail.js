@@ -1,7 +1,14 @@
+import { useDeleteNumber } from '../delete/useDeleteNumber'
 import { useNumber } from './useNumber'
 
 export function NumberDetail({ id, back }) {
-  const { number, isLoading, error } = useNumber(id)
+  const { data: number, isLoading, error } = useNumber(id)
+  const { mutate: deleteNumber } = useDeleteNumber(id)
+
+  function handleDelete() {
+    deleteNumber(id)
+    back()
+  }
 
   if (error) alert(error)
   if (isLoading) return 'Loading...'
@@ -19,6 +26,12 @@ export function NumberDetail({ id, back }) {
       <div className="number-detail-container">
         <h1 className="number-detail">{number.number}</h1>
       </div>
+
+      <br />
+
+      <button onClick={handleDelete} className="back">
+        delete
+      </button>
     </>
   )
 }

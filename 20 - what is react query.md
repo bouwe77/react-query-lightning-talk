@@ -8,6 +8,8 @@
 
     - Dedicated dev tools
 
-    - Stale-While-Revalidate strategy: Immediately response from the cache, but if necessary, refresh the cache in the background.
+    - Stale-While-Revalidate strategy: Immediate response from the cache, but if necessary, refresh the cache in the background.
 
     - Also: request cancellation, offline support, prefetching, pagination, etc.
+
+    - Future: Framework agnostic
