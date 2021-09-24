@@ -1,4 +1,4 @@
 # Handling Server State with React Query ⚛
 
 WebinarGeek lightning talk
-September 23, 2021
+September 24, 2021
